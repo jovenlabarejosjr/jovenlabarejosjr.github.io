@@ -38,7 +38,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background: url('bg.png') center/cover no-repeat fixed;
+    background: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
     font-size: 16px;
@@ -51,7 +51,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    background: rgba(12,25,56,0.65);
+    background: transparent;
     pointer-events: none;
     z-index: 0;
   }
@@ -137,7 +137,18 @@
     padding: 120px 80px 80px;
     position: relative;
     overflow: hidden;
+    background: url('bg.png') center/cover no-repeat;
   }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(12,25,56,0.72);
+    z-index: 0;
+  }
+
+  .hero > * { position: relative; z-index: 1; }
 
   .hero-glow {
     position: absolute;
