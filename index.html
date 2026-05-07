@@ -7,27 +7,26 @@
 <meta name="description" content="AI Automation Specialist & n8n Engineer. I help businesses eliminate manual work and scale with intelligent workflow systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0c1938;
-    --bg2: #0a1530;
-    --bg3: #081228;
-    --surface: #112048;
-    --surface2: #162550;
-    --teal: #0398aa;
-    --teal2: #027a8a;
-    --teal-dim: rgba(3,152,170,0.12);
-    --teal-glow: rgba(3,152,170,0.06);
-    --amber: #fd610f;
-    --amber2: #e5560d;
-    --text: #e4e5ea;
-    --text2: #9aa3b8;
-    --text3: #5a6680;
-    --border: rgba(3,152,170,0.18);
-    --border2: rgba(255,255,255,0.07);
-    --font-display: 'Montserrat', sans-serif;
-    --font-body: 'Montserrat', sans-serif;
+    --bg: #0a0e0d;
+    --bg2: #0f1412;
+    --bg3: #141a18;
+    --surface: #1a2420;
+    --surface2: #1f2d28;
+    --teal: #00e5a0;
+    --teal2: #00c488;
+    --teal-dim: rgba(0,229,160,0.12);
+    --teal-glow: rgba(0,229,160,0.06);
+    --amber: #f5a623;
+    --text: #e8f0ed;
+    --text2: #8fa89f;
+    --text3: #556660;
+    --border: rgba(0,229,160,0.12);
+    --border2: rgba(255,255,255,0.06);
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
     --font-mono: 'DM Mono', monospace;
     --r: 12px;
     --r2: 20px;
@@ -63,8 +62,8 @@
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(3,152,170,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(3,152,170,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
     z-index: 0;
@@ -80,7 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(12,25,56,0.88);
+    background: rgba(10,14,13,0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border2);
   }
@@ -115,11 +114,11 @@
   .nav-links a:hover { color: var(--teal); }
 
   .nav-cta {
-    background: var(--amber) !important;
-    color: #ffffff !important;
+    background: var(--teal) !important;
+    color: var(--bg) !important;
     padding: 8px 18px;
     border-radius: 6px;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     font-family: var(--font-body) !important;
     transition: opacity 0.2s !important;
   }
@@ -143,7 +142,7 @@
   .hero-glow {
     position: absolute;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(3,152,170,0.10) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0,229,160,0.08) 0%, transparent 70%);
     top: 10%; right: -100px;
     pointer-events: none;
   }
@@ -151,7 +150,7 @@
   .hero-glow2 {
     position: absolute;
     width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(253,97,15,0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(245,166,35,0.05) 0%, transparent 70%);
     bottom: 10%; left: -80px;
     pointer-events: none;
   }
@@ -213,8 +212,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--amber);
-    color: #ffffff;
+    background: var(--teal);
+    color: var(--bg);
     padding: 14px 28px;
     border-radius: var(--r);
     font-family: var(--font-display);
@@ -226,7 +225,7 @@
     cursor: pointer;
   }
 
-  .btn-primary:hover { background: var(--amber2); transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--teal2); transform: translateY(-1px); }
 
   .btn-secondary {
     display: inline-flex;
@@ -450,7 +449,7 @@
     background: var(--teal-dim);
     color: var(--teal);
     border-radius: 20px;
-    border: 1px solid rgba(3,152,170,0.22);
+    border: 1px solid rgba(0,229,160,0.2);
   }
 
   /* === PORTFOLIO === */
@@ -537,7 +536,7 @@
     border-radius: 20px;
     background: var(--teal-dim);
     color: var(--teal);
-    border: 1px solid rgba(3,152,170,0.22);
+    border: 1px solid rgba(0,229,160,0.2);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -569,7 +568,7 @@
     padding: 10px 14px;
     background: var(--teal-dim);
     border-radius: 8px;
-    border: 1px solid rgba(3,152,170,0.18);
+    border: 1px solid rgba(0,229,160,0.15);
   }
 
   .project-result::before { content: '→'; }
@@ -794,8 +793,8 @@
 
   .form-submit {
     width: 100%;
-    background: var(--amber);
-    color: #ffffff;
+    background: var(--teal);
+    color: var(--bg);
     border: none;
     border-radius: var(--r);
     padding: 14px;
@@ -807,7 +806,7 @@
     margin-top: 8px;
   }
 
-  .form-submit:hover { background: var(--amber2); }
+  .form-submit:hover { background: var(--teal2); }
 
   /* === FOOTER === */
   footer {
@@ -863,8 +862,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(3,152,170,0.10);
-    border: 1px solid rgba(3,152,170,0.22);
+    background: rgba(0,229,160,0.08);
+    border: 1px solid rgba(0,229,160,0.2);
     border-radius: 20px;
     padding: 6px 14px;
     font-family: var(--font-mono);
@@ -904,7 +903,7 @@
   /* === CURSOR GLOW === */
   .cursor-glow {
     width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(3,152,170,0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0,229,160,0.04) 0%, transparent 70%);
     position: fixed;
     border-radius: 50%;
     pointer-events: none;
@@ -1312,7 +1311,7 @@
             <div style="font-size:14px; color:var(--text); font-weight:500;">AI Revolution</div>
             <div style="font-size:12px; color:var(--text3); font-family:var(--font-mono); margin-top:2px;">ChatGPT · Midjourney · AI Content · 2023</div>
           </div>
-          <div class="about-card" style="padding:16px 20px; border-color: rgba(3,152,170,0.28);">
+          <div class="about-card" style="padding:16px 20px; border-color: rgba(0,229,160,0.25);">
             <div style="font-size:14px; color:var(--teal); font-weight:500;">n8n + AI Fundamentals — In Progress</div>
             <div style="font-size:12px; color:var(--text3); font-family:var(--font-mono); margin-top:2px;">Level 1 & 2 · Prompt Engineering · 2025</div>
           </div>
