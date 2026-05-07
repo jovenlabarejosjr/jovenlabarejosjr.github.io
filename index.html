@@ -922,6 +922,46 @@
     transition: left 0.1s, top 0.1s;
     transform: translate(-50%, -50%);
   }
+.logo-wrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.logo-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #0398aa;
+  border-right-color: rgba(3,152,170,0.3);
+  border-bottom-color: rgba(3,152,170,0.1);
+  border-left-color: rgba(3,152,170,0.5);
+  animation: spinRing 2s linear infinite;
+}
+
+.logo-ring::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: #0398aa;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #0398aa, 0 0 12px rgba(3,152,170,0.5);
+}
+
+@keyframes spinRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+  
 </style>
 </head>
 <body>
@@ -931,9 +971,13 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="logo.png" alt="J Labs Logo" style="height:32px; width:auto; margin-right:8px; vertical-align:middle;">
-    J Labs<span>.dev</span>
-  </a>
+  <div class="logo-wrapper">
+    <div class="logo-ring"></div>
+    <img src="logo.png" alt="J Labs Logo" style="height:28px; width:auto; position:relative; z-index:1;">
+  </div>
+  J Labs<span>.dev</span>
+</a>
+
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
