@@ -84,16 +84,13 @@
     border-bottom: 1px solid var(--border2);
   }
 
-.nav-logo {
+  .nav-logo {
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 18px;
     color: var(--teal);
     letter-spacing: -0.5px;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
 
   .nav-logo span { color: var(--text2); font-weight: 400; }
@@ -925,33 +922,6 @@
     transition: left 0.1s, top 0.1s;
     transform: translate(-50%, -50%);
   }
-.logo-wrapper {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-.logo-ring {
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  border-top-color: #fd610f;
-  border-right-color: rgba(253,97,15,0.3);
-  border-bottom-color: rgba(253,97,15,0.1);
-  border-left-color: rgba(253,97,15,0.5);
-  animation: spinRing 2s linear infinite;
-}
-
-@keyframes spinRing {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-  
 </style>
 </head>
 <body>
@@ -960,14 +930,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">
-  <div class="logo-wrapper">
-    <div class="logo-ring"></div>
-    <img src="logo.png" alt="J Labs Logo" style="height:28px; width:auto; position:relative; z-index:1;">
-  </div>
-  J Labs<span>.dev</span>
-</a>
-
+  <a href="#" class="nav-logo">JL<span>.dev</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
