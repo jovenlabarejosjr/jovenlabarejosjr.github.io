@@ -34,7 +34,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -56,7 +55,9 @@
     z-index: 0;
   }
 
-  /* === GRID BACKGROUND === */
+  /* =============================================
+     ENHANCEMENT 1: ANIMATED GRID BACKGROUND
+     ============================================= */
   body::after {
     content: '';
     position: fixed;
@@ -67,6 +68,12 @@
     background-size: 60px 60px;
     pointer-events: none;
     z-index: 0;
+    animation: gridMove 20s linear infinite;
+  }
+
+  @keyframes gridMove {
+    0%   { background-position: 0 0; }
+    100% { background-position: 60px 60px; }
   }
 
   /* === NAV === */
@@ -91,6 +98,9 @@
     color: var(--teal);
     letter-spacing: -0.5px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .nav-logo span { color: var(--text2); font-weight: 400; }
@@ -150,12 +160,16 @@
 
   .hero > * { position: relative; z-index: 1; }
 
+  /* =============================================
+     ENHANCEMENT 2: FLOATING ANIMATED GLOW ORBS
+     ============================================= */
   .hero-glow {
     position: absolute;
     width: 600px; height: 600px;
     background: radial-gradient(circle, rgba(3,152,170,0.10) 0%, transparent 70%);
     top: 10%; right: -100px;
     pointer-events: none;
+    animation: floatOrb 8s ease-in-out infinite;
   }
 
   .hero-glow2 {
@@ -164,6 +178,12 @@
     background: radial-gradient(circle, rgba(253,97,15,0.07) 0%, transparent 70%);
     bottom: 10%; left: -80px;
     pointer-events: none;
+    animation: floatOrb 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes floatOrb {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50%       { transform: translateY(-30px) scale(1.1); }
   }
 
   .hero-eyebrow {
@@ -199,7 +219,32 @@
   }
 
   .hero h1 .accent { color: var(--teal); }
-  .hero h1 .line2 { display: block; color: var(--text2); font-weight: 400; }
+
+  /* =============================================
+     ENHANCEMENT 3: TYPEWRITER EFFECT
+     ============================================= */
+  .hero h1 .line2 {
+    display: block;
+    color: var(--text2);
+    font-weight: 400;
+    overflow: hidden;
+    border-right: 3px solid var(--teal);
+    white-space: nowrap;
+    width: 0;
+    animation:
+      typing 1.5s steps(16, end) 1.2s forwards,
+      blink 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to   { width: 16ch; }
+  }
+
+  @keyframes blink {
+    0%, 100% { border-color: var(--teal); }
+    50%       { border-color: transparent; }
+  }
 
   .hero-sub {
     font-size: 18px;
@@ -256,6 +301,9 @@
 
   .btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
 
+  /* =============================================
+     ENHANCEMENT 5: SHIMMER STAT NUMBERS
+     ============================================= */
   .hero-stats {
     display: flex;
     gap: 48px;
@@ -267,13 +315,29 @@
   }
 
   .stat-item {}
+
   .stat-num {
     font-family: var(--font-display);
     font-size: 32px;
     font-weight: 800;
-    color: var(--teal);
     line-height: 1;
+    background: linear-gradient(
+      90deg,
+      var(--teal) 0%,
+      #00f5ff 50%,
+      var(--teal) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
   }
+
+  @keyframes shimmer {
+    to { background-position: 200% center; }
+  }
+
   .stat-label {
     font-size: 13px;
     color: var(--text3);
@@ -417,7 +481,17 @@
     transition: transform 0.3s;
   }
 
-  .service-card:hover { border-color: var(--border); transform: translateY(-4px); }
+  /* =============================================
+     ENHANCEMENT 4: GLOWING BORDER ON HOVER
+     ============================================= */
+  .service-card:hover {
+    border-color: var(--teal);
+    box-shadow:
+      0 0 20px rgba(3,152,170,0.15),
+      0 0 60px rgba(3,152,170,0.05);
+    transform: translateY(-6px);
+  }
+
   .service-card:hover::before { transform: scaleX(1); }
 
   .service-icon {
@@ -479,7 +553,13 @@
     cursor: pointer;
   }
 
-  .project-card:hover { border-color: var(--border); transform: translateY(-4px); }
+  .project-card:hover {
+    border-color: var(--teal);
+    box-shadow:
+      0 0 20px rgba(3,152,170,0.12),
+      0 0 50px rgba(3,152,170,0.04);
+    transform: translateY(-4px);
+  }
 
   .project-visual {
     height: 180px;
@@ -502,7 +582,6 @@
     background: linear-gradient(135deg, var(--teal-dim) 0%, transparent 60%);
   }
 
-  /* Automation flow visual */
   .flow-vis {
     display: flex;
     align-items: center;
@@ -605,7 +684,6 @@
   }
 
   .skill-bars { display: flex; flex-direction: column; gap: 12px; }
-
   .skill-bar-item {}
 
   .skill-bar-header {
@@ -662,7 +740,12 @@
     transition: all 0.2s;
   }
 
-  .tool-pill:hover { border-color: var(--border); color: var(--text); }
+  .tool-pill:hover {
+    border-color: var(--teal);
+    color: var(--text);
+    box-shadow: 0 0 12px rgba(3,152,170,0.1);
+  }
+
   .tool-pill span { font-size: 16px; }
 
   /* === JOURNEY === */
@@ -790,7 +873,7 @@
     color: var(--text);
     font-family: var(--font-body);
     font-size: 15px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
     resize: none;
   }
@@ -798,6 +881,7 @@
   .form-group input:focus,
   .form-group textarea:focus {
     border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(3,152,170,0.08);
   }
 
   .form-group textarea { height: 120px; }
@@ -817,7 +901,7 @@
     margin-top: 8px;
   }
 
-  .form-submit:hover { background: var(--amber2); }
+  .form-submit:hover { background: var(--amber2); transform: translateY(-1px); }
 
   /* === FOOTER === */
   footer {
@@ -854,7 +938,7 @@
   /* === ANIMATIONS === */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .reveal {
@@ -893,8 +977,8 @@
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
+    0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(3,152,170,0.4); }
+    50%       { opacity: 0.8; transform: scale(0.9); box-shadow: 0 0 0 4px rgba(3,152,170,0); }
   }
 
   /* === RESPONSIVE === */
@@ -909,6 +993,7 @@
     .tool-grid { grid-template-columns: repeat(2,1fr); }
     footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
     .hero-stats { flex-wrap: wrap; gap: 24px; }
+    .hero h1 .line2 { white-space: normal; border-right: none; animation: fadeUp 0.7s 1.2s forwards; width: auto; opacity: 0; }
   }
 
   /* === CURSOR GLOW === */
@@ -919,9 +1004,36 @@
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
-    transition: left 0.1s, top 0.1s;
+    transition: left 0.08s, top 0.08s;
     transform: translate(-50%, -50%);
   }
+
+  .logo-wrapper {
+    position: relative;
+    width: 36px; height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+
+  .logo-ring {
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #fd610f;
+    border-right-color: rgba(253,97,15,0.3);
+    border-bottom-color: rgba(253,97,15,0.1);
+    border-left-color: rgba(253,97,15,0.5);
+    animation: spinRing 2s linear infinite;
+  }
+
+  @keyframes spinRing {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
 </style>
 </head>
 <body>
@@ -930,7 +1042,13 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">JL<span>.dev</span></a>
+  <a href="#" class="nav-logo">
+    <div class="logo-wrapper">
+      <div class="logo-ring"></div>
+      <img src="logo.png" alt="J Labs Logo" style="height:28px; width:auto; position:relative; z-index:1;">
+    </div>
+    J Labs<span>.dev</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -1005,7 +1123,6 @@
     <div class="reveal">
       <div class="about-card">
         <div class="about-card-label">// Career timeline</div>
-
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2025</div>
@@ -1063,70 +1180,47 @@
       <h3>Workflow Automation</h3>
       <p>End-to-end automation of repetitive business processes using n8n. Connect your tools, eliminate copy-paste work, and let your systems run themselves.</p>
       <div class="service-tags">
-        <span class="tag">n8n</span>
-        <span class="tag">API</span>
-        <span class="tag">Webhooks</span>
-        <span class="tag">Triggers</span>
+        <span class="tag">n8n</span><span class="tag">API</span><span class="tag">Webhooks</span><span class="tag">Triggers</span>
       </div>
     </div>
-
     <div class="service-card reveal">
       <div class="service-icon">🤖</div>
       <h3>AI Agent Design</h3>
       <p>Build intelligent AI agents that make decisions, process data, and respond to your business needs — powered by large language models and custom prompt engineering.</p>
       <div class="service-tags">
-        <span class="tag">ChatGPT</span>
-        <span class="tag">LLMs</span>
-        <span class="tag">Prompts</span>
-        <span class="tag">Agents</span>
+        <span class="tag">ChatGPT</span><span class="tag">LLMs</span><span class="tag">Prompts</span><span class="tag">Agents</span>
       </div>
     </div>
-
     <div class="service-card reveal">
       <div class="service-icon">🔗</div>
       <h3>Systems Integration</h3>
       <p>Connect your existing tools — CRM, email, spreadsheets, Notion, Airtable — into one cohesive automated ecosystem. Stop switching tabs. Start scaling.</p>
       <div class="service-tags">
-        <span class="tag">Google Sheets</span>
-        <span class="tag">Notion</span>
-        <span class="tag">Gmail</span>
-        <span class="tag">Airtable</span>
+        <span class="tag">Google Sheets</span><span class="tag">Notion</span><span class="tag">Gmail</span><span class="tag">Airtable</span>
       </div>
     </div>
-
     <div class="service-card reveal">
       <div class="service-icon">📣</div>
       <h3>AI Content Systems</h3>
       <p>Automate your content pipeline — from ideation to drafting to scheduling. AI-generated copy, graphics, and posts, delivered on time, every time.</p>
       <div class="service-tags">
-        <span class="tag">ChatGPT</span>
-        <span class="tag">Midjourney</span>
-        <span class="tag">Canva</span>
-        <span class="tag">Meta</span>
+        <span class="tag">ChatGPT</span><span class="tag">Midjourney</span><span class="tag">Canva</span><span class="tag">Meta</span>
       </div>
     </div>
-
     <div class="service-card reveal">
       <div class="service-icon">📊</div>
       <h3>Lead Capture Automation</h3>
       <p>Never lose a lead again. Automated capture, tagging, logging, and follow-up sequences that run 24/7 without you lifting a finger.</p>
       <div class="service-tags">
-        <span class="tag">CRM</span>
-        <span class="tag">Email</span>
-        <span class="tag">Forms</span>
-        <span class="tag">Alerts</span>
+        <span class="tag">CRM</span><span class="tag">Email</span><span class="tag">Forms</span><span class="tag">Alerts</span>
       </div>
     </div>
-
     <div class="service-card reveal">
       <div class="service-icon">📋</div>
       <h3>Digital Marketing Strategy</h3>
       <p>Backed by hands-on experience with Meta Ads, content strategy, and data analysis — I help you build visibility while the automation handles execution.</p>
       <div class="service-tags">
-        <span class="tag">Meta Ads</span>
-        <span class="tag">Strategy</span>
-        <span class="tag">Analytics</span>
-        <span class="tag">Branding</span>
+        <span class="tag">Meta Ads</span><span class="tag">Strategy</span><span class="tag">Analytics</span><span class="tag">Branding</span>
       </div>
     </div>
   </div>
@@ -1143,12 +1237,9 @@
       <div class="project-visual">
         <div class="project-visual-bg"></div>
         <div class="flow-vis">
-          <div class="flow-node">📋</div>
-          <div class="flow-arrow"></div>
-          <div class="flow-node">⚙️</div>
-          <div class="flow-arrow"></div>
-          <div class="flow-node">📧</div>
-          <div class="flow-arrow"></div>
+          <div class="flow-node">📋</div><div class="flow-arrow"></div>
+          <div class="flow-node">⚙️</div><div class="flow-arrow"></div>
+          <div class="flow-node">📧</div><div class="flow-arrow"></div>
           <div class="flow-node">✅</div>
         </div>
       </div>
@@ -1164,12 +1255,9 @@
       <div class="project-visual">
         <div class="project-visual-bg"></div>
         <div class="flow-vis">
-          <div class="flow-node">🤖</div>
-          <div class="flow-arrow"></div>
-          <div class="flow-node">✍️</div>
-          <div class="flow-arrow"></div>
-          <div class="flow-node">📱</div>
-          <div class="flow-arrow"></div>
+          <div class="flow-node">🤖</div><div class="flow-arrow"></div>
+          <div class="flow-node">✍️</div><div class="flow-arrow"></div>
+          <div class="flow-node">📱</div><div class="flow-arrow"></div>
           <div class="flow-node">📅</div>
         </div>
       </div>
@@ -1185,12 +1273,9 @@
       <div class="project-visual">
         <div class="project-visual-bg"></div>
         <div class="flow-vis">
-          <div class="flow-node">📁</div>
-          <div class="flow-arrow"></div>
-          <div class="flow-node">🏷️</div>
-          <div class="flow-arrow"></div>
-          <div class="flow-node">🔒</div>
-          <div class="flow-arrow"></div>
+          <div class="flow-node">📁</div><div class="flow-arrow"></div>
+          <div class="flow-node">🏷️</div><div class="flow-arrow"></div>
+          <div class="flow-node">🔒</div><div class="flow-arrow"></div>
           <div class="flow-node">📊</div>
         </div>
       </div>
@@ -1206,12 +1291,9 @@
       <div class="project-visual">
         <div class="project-visual-bg"></div>
         <div class="flow-vis">
-          <div class="flow-node">📦</div>
-          <div class="flow-arrow"></div>
-          <div class="flow-node">🔍</div>
-          <div class="flow-arrow"></div>
-          <div class="flow-node">📈</div>
-          <div class="flow-arrow"></div>
+          <div class="flow-node">📦</div><div class="flow-arrow"></div>
+          <div class="flow-node">🔍</div><div class="flow-arrow"></div>
+          <div class="flow-node">📈</div><div class="flow-arrow"></div>
           <div class="flow-node">🎓</div>
         </div>
       </div>
@@ -1236,58 +1318,36 @@
         <div class="skill-group-label">// Core Automation Stack</div>
         <div class="skill-bars">
           <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-name">n8n Workflow Automation</span>
-              <span class="skill-pct">Building</span>
-            </div>
+            <div class="skill-bar-header"><span class="skill-name">n8n Workflow Automation</span><span class="skill-pct">Building</span></div>
             <div class="skill-track"><div class="skill-fill" style="width:72%; animation-delay:0.1s"></div></div>
           </div>
           <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-name">Prompt Engineering</span>
-              <span class="skill-pct">Advanced</span>
-            </div>
+            <div class="skill-bar-header"><span class="skill-name">Prompt Engineering</span><span class="skill-pct">Advanced</span></div>
             <div class="skill-track"><div class="skill-fill" style="width:80%; animation-delay:0.2s"></div></div>
           </div>
           <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-name">AI Agent Design</span>
-              <span class="skill-pct">Growing</span>
-            </div>
+            <div class="skill-bar-header"><span class="skill-name">AI Agent Design</span><span class="skill-pct">Growing</span></div>
             <div class="skill-track"><div class="skill-fill" style="width:65%; animation-delay:0.3s"></div></div>
           </div>
           <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-name">API & Webhook Integration</span>
-              <span class="skill-pct">Solid</span>
-            </div>
+            <div class="skill-bar-header"><span class="skill-name">API & Webhook Integration</span><span class="skill-pct">Solid</span></div>
             <div class="skill-track"><div class="skill-fill" style="width:75%; animation-delay:0.4s"></div></div>
           </div>
         </div>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-label">// Digital Marketing</div>
         <div class="skill-bars">
           <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-name">Meta Ads</span>
-              <span class="skill-pct">Experienced</span>
-            </div>
+            <div class="skill-bar-header"><span class="skill-name">Meta Ads</span><span class="skill-pct">Experienced</span></div>
             <div class="skill-track"><div class="skill-fill" style="width:82%; animation-delay:0.5s"></div></div>
           </div>
           <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-name">Content Strategy</span>
-              <span class="skill-pct">Strong</span>
-            </div>
+            <div class="skill-bar-header"><span class="skill-name">Content Strategy</span><span class="skill-pct">Strong</span></div>
             <div class="skill-track"><div class="skill-fill" style="width:85%; animation-delay:0.6s"></div></div>
           </div>
           <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-name">Graphic Design (Adobe Suite)</span>
-              <span class="skill-pct">Expert</span>
-            </div>
+            <div class="skill-bar-header"><span class="skill-name">Graphic Design (Adobe Suite)</span><span class="skill-pct">Expert</span></div>
             <div class="skill-track"><div class="skill-fill" style="width:90%; animation-delay:0.7s"></div></div>
           </div>
         </div>
@@ -1366,37 +1426,21 @@
     <div class="reveal">
       <div class="contact-card">
         <div class="about-card-label" style="margin-bottom:20px;">// Get in touch</div>
-
         <a href="mailto:jovenlabarejosjr@gmail.com" class="contact-item">
           <div class="contact-icon">📧</div>
-          <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-value">jovenlabarejosjr@gmail.com</div>
-          </div>
+          <div><div class="contact-label">Email</div><div class="contact-value">jovenlabarejosjr@gmail.com</div></div>
         </a>
-
         <a href="tel:+639055128215" class="contact-item">
           <div class="contact-icon">📱</div>
-          <div>
-            <div class="contact-label">Phone / WhatsApp</div>
-            <div class="contact-value">+63 905 512 8215</div>
-          </div>
+          <div><div class="contact-label">Phone / WhatsApp</div><div class="contact-value">+63 905 512 8215</div></div>
         </a>
-
         <a href="https://www.linkedin.com/in/labarejosjr" target="_blank" class="contact-item">
           <div class="contact-icon">💼</div>
-          <div>
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-value">linkedin.com/in/labarejosjr</div>
-          </div>
+          <div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/labarejosjr</div></div>
         </a>
-
         <div class="contact-item" style="cursor:default;">
           <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Quezon City, Philippines · Open to Remote</div>
-          </div>
+          <div><div class="contact-label">Location</div><div class="contact-value">Quezon City, Philippines · Open to Remote</div></div>
         </div>
       </div>
     </div>
@@ -1458,14 +1502,13 @@
           bar.style.animation = 'none';
           bar.offsetHeight;
           bar.style.animation = '';
-          bar.style.width = bar.style.width;
         });
       }
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('#skills').forEach(el => skillObserver.observe(el));
 
-  // Active nav
+  // Active nav highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
