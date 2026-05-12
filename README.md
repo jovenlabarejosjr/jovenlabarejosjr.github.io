@@ -11,7 +11,7 @@
 
 ## 🌐 Live Portfolio
 
-👉 **[jovenlabarejos.github.io](https://jovenlabarejos.github.io)**
+👉 **[jovenlabarejosjr.github.io](https://jovenlabarejosjr.github.io/))**
 
 ---
 
