@@ -99,7 +99,7 @@
 
 
   
-/* RESPONSIVE */
+/* my name is about sectionE */
 
 @media(max-width:900px){
 
@@ -119,7 +119,36 @@
     }
 }
 
+    .about-wrapper{
+  display:flex;
+  justify-content:center;
+}
 
+.about-box{
+  max-width:700px;
+  width:100%;
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(3,152,170,0.15);
+  border-radius:24px;
+  padding:32px;
+  backdrop-filter:blur(10px);
+}
+
+.about-box p{
+  color:var(--text2);
+  line-height:1.9;
+  margin-bottom:20px;
+  font-size:15px;
+}
+
+.highlight-line{
+  font-size:18px;
+  font-weight:700;
+  color:var(--text);
+  border-left:3px solid var(--teal);
+  padding-left:16px;
+  margin-top:28px;
+}
   
 
 
@@ -395,13 +424,35 @@
   <!-- TOP ROW: Text left, Photo right -->
   <div style="display:grid; grid-template-columns:1fr 240px; gap:48px; align-items:start; margin-bottom:48px;">
 
-    <!-- LEFT — About Text -->
+    <!-- LEFT — About Text 
     <div class="about-text reveal">
       <p>I'm <strong>Joven Labarejos</strong> — an AI Automation Specialist and n8n Workflow Engineer based in Quezon City, Philippines. I have a Bachelor of Science in Computer Science, which means I don't just use automation tools — I understand the logic behind them.</p>
       <p>My background spans <strong>digital marketing, graphic design, document systems, and AI-powered content creation</strong>. That's not a scattered history — it's a complete picture of how businesses actually operate. And that's what makes my automations work in the real world, not just in theory.</p>
       <p>I've been building toward this for <strong>8 years</strong> — through study, corporate setbacks, budget constraints, and pivots. Every obstacle made me a sharper problem-solver. Passion kept me moving. Systems keep me delivering.</p>
       <p>I don't just build workflows. <strong>I build infrastructure that makes businesses run better.</strong></p>
     </div>
+    -->
+
+    <div class="about-wrapper">
+  <div class="about-box">
+    <p>
+      I'm <strong>Joven Labarejos</strong> — an AI Automation Specialist and n8n Workflow Engineer based in Quezon City, Philippines. I have a Bachelor of Science in Computer Science, which means I don't just use automation tools — I understand the logic behind them.
+    </p>
+    <p>
+      My background spans digital marketing, graphic design, document systems, and AI-powered content creation. That's not a scattered history — it's a complete picture of how businesses actually operate. And that's what makes my automations work in the real world, not just in theory.
+    </p>
+    <p>
+      I've been building toward this for 8 years — through study, corporate setbacks, budget constraints, and pivots. Every obstacle made me a sharper problem-solver. Passion kept me moving. Systems keep me delivering.
+    </p>
+    <p class="highlight-line">
+      I don't just build workflows. I build infrastructure that makes businesses run better.
+    </p>
+  </div>
+</div>
+
+
+
+    
 
     <!-- RIGHT — Photo -->
     <div class="reveal" style="display:flex; flex-direction:column; align-items:center; gap:14px;">
