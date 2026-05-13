@@ -100,62 +100,62 @@
 
   
 /* my name is about sectionE */
-.about-editorial{
-  position:relative;
-
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(3,152,170,0.15);
-
-  border-radius:28px;
-
-  padding:40px;
-
-  overflow:hidden;
-
-  backdrop-filter:blur(10px);
+.about-editorial {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(3, 152, 170, 0.15);
+  border-radius: 28px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
 }
 
-.about-image{
-  position:absolute;
-
-  top:40px;
-  right:40px;
-
-  width:240px;
+.about-content {
+  max-width: 660px;
+  line-height: 1.7;
+  color: var(--text2);
 }
 
-.about-image img{
-  width:100%;
-  display:block;
+.about-content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
 }
 
-.about-content{
-  max-width:700px;
-
-  padding-right:260px;
+.about-content p {
+  font-size: 17px;
+  margin-bottom: 24px;
 }
 
-.about-content p{
-  line-height:1.8;
-  margin-bottom:20px;
-
-  color:var(--text2);
-
-  font-size:15px;
+.about-highlight {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  border-left: 3px solid var(--teal);
+  padding-left: 18px;
+  margin-top: 28px;
 }
 
-.about-highlight{
-  font-size:20px;
-  font-weight:700;
-
-  color:var(--text);
-
-  border-left:3px solid var(--teal);
-
-  padding-left:18px;
-
-  margin-top:28px;
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid rgba(3, 152, 170, 0.3);
+  box-shadow: 0 0 30px rgba(3, 152, 170, 0.15);
+  object-fit: cover;
 }
+@media (max-width: 768px) {
+  .about-editorial {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-image {
+    margin-top: 24px;
+  }
+}
+
   
 
 
@@ -433,32 +433,34 @@
 <div style="display:grid; grid-template-columns:1fr 240px; gap:48px; align-items:start; margin-bottom:48px;">
 
   <!-- LEFT — Text -->
-  <div class="about-editorial">
-    <div class="about-content">
-      <p>
-        I'm <strong>Joven Labarejos</strong> — an AI Automation Specialist and n8n Workflow Engineer based in Quezon City, Philippines. I have a Bachelor of Science in Computer Science, which means I don't just use automation tools — I understand the logic behind them.
-      </p>
-      <p>
-        My background spans digital marketing, graphic design, document systems, and AI-powered content creation. That's not a scattered history — it's a complete picture of how businesses actually operate. And that's what makes my automations work in the real world, not just in theory.
-      </p>
-      <p>
-        I've been building toward this for 8 years — through study, corporate setbacks, budget constraints, and pivots. Every obstacle made me a sharper problem-solver. Passion kept me moving. Systems keep me delivering.
-      </p>
-      <p class="about-highlight">
-        I don't just build workflows. I build infrastructure that makes businesses run better.
-      </p>
-    </div>
+  <!-- ABOUT SECTION -->
+<div class="about-editorial">
+  <div class="about-content">
+    <h2>I'm <strong>Joven Labarejos</strong> —</h2>
+    <p>
+      an AI Automation Specialist and n8n Workflow Engineer based in Quezon City, Philippines.
+      I have a Bachelor of Science in Computer Science, which means I don't just use automation tools —
+      I understand the logic behind them.
+    </p>
+    <p>
+      My background spans digital marketing, graphic design, document systems, and AI-powered content creation.
+      That's not a scattered history — it's a complete picture of how businesses actually operate.
+      And that's what makes my automations work in the real world, not just in theory.
+    </p>
+    <p>
+      I've been building toward this for 8 years — through study, corporate setbacks, budget constraints, and pivots.
+      Every obstacle made me a sharper problem-solver. Passion kept me moving. Systems keep me delivering.
+    </p>
+    <p class="about-highlight">
+      I don't just build workflows. I build infrastructure that makes businesses run better.
+    </p>
+  </div>
 
-
-
-      <!-- RIGHT — Photo -->
   <div class="about-image">
     <img src="photo.png" alt="Joven Labarejos">
   </div>
+</div>
 
-
-    
-  </div>
 
 </div>
 
