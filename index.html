@@ -23,49 +23,39 @@
     --r: 12px; --r2: 20px;
   }
 
-
-
-
-
-  
 @media (max-width: 768px) {
   .about-editorial {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw; /* full viewport width */
-    padding: 0 20px; /* side padding for readability */
+    width: 100vw;
+    padding: 0 20px;
     text-align: center;
   }
-
   .about-image {
-    order: -1; /* show image before text */
+    order: -1;
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 24px;
   }
-
   .about-image img {
     width: 100%;
-    max-width: 320px; /* limit image size */
+    max-width: 320px;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(3,152,170,0.15);
     object-fit: cover;
   }
-
   .about-content {
     width: 100%;
     max-width: 100%;
     padding: 0;
   }
-
   .about-content p {
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 20px;
   }
-
   .about-highlight {
     font-size: 17px;
     border-left: none;
@@ -74,18 +64,6 @@
   }
 }
 
-
-
-
-
-
-  
-
-
-
-
-  
-/* my name is about sectionE */
 .about-editorial {
   display: grid;
   grid-template-columns: 1fr 280px;
@@ -97,25 +75,21 @@
   padding: 40px;
   backdrop-filter: blur(10px);
 }
-
 .about-content {
   max-width: 660px;
   line-height: 1.7;
   color: var(--text2);
 }
-
 .about-content h2 {
   font-size: 22px;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 16px;
 }
-
 .about-content p {
   font-size: 17px;
   margin-bottom: 24px;
 }
-
 .about-highlight {
   font-size: 18px;
   font-weight: 700;
@@ -124,11 +98,9 @@
   padding-left: 18px;
   margin-top: 28px;
 }
-
 .about-image img {
   width: 100%;
   border-radius: 20px;
-  /* border removed */
   box-shadow: 0 0 30px rgba(3, 152, 170, 0.15);
   object-fit: cover;
 }
@@ -142,13 +114,6 @@
   }
 }
 
-  
-
-
-
-
-
-  
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
@@ -161,7 +126,6 @@
   }
   @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 60px 60px; } }
 
-  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between;
@@ -176,7 +140,6 @@
   .nav-cta:hover { opacity: 0.85 !important; }
   main { position: relative; z-index: 1; }
 
-  /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 80px 80px; position: relative; overflow: hidden; background: url('bg.png') center/cover no-repeat; }
   .hero::before { content: ''; position: absolute; inset: 0; background: rgba(12,25,56,0.72); z-index: 0; }
   .hero > * { position: relative; z-index: 1; }
@@ -201,14 +164,12 @@
   @keyframes shimmer { to { background-position: 200% center; } }
   .stat-label { font-size: 13px; color: var(--text3); margin-top: 4px; font-family: var(--font-mono); }
 
-  /* SECTIONS */
   section { padding: 100px 80px; position: relative; }
   .section-label { font-family: var(--font-mono); font-size: 11px; color: var(--teal); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
   .section-label::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--teal); opacity: 0.5; }
   .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: var(--text); letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
   .section-sub { font-size: 17px; color: var(--text2); max-width: 540px; margin-bottom: 60px; }
 
-  /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   .about-text p { color: var(--text2); margin-bottom: 16px; font-size: 16px; line-height: 1.8; }
   .about-text p strong { color: var(--teal); font-weight: 500; }
@@ -221,7 +182,6 @@
   .timeline-title { font-size: 14px; font-weight: 500; color: var(--text); }
   .timeline-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
 
-  /* SERVICES */
   #services { background: rgba(10,21,48,0.75); }
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .service-card { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--r2); padding: 32px; transition: all 0.3s; position: relative; overflow: hidden; }
@@ -234,7 +194,6 @@
   .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag { font-family: var(--font-mono); font-size: 11px; padding: 3px 10px; background: var(--teal-dim); color: var(--teal); border-radius: 20px; border: 1px solid rgba(3,152,170,0.22); }
 
-  /* PORTFOLIO */
   .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .project-card { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--r2); overflow: hidden; transition: all 0.3s; cursor: pointer; }
   .project-card:hover { border-color: var(--teal); box-shadow: 0 0 20px rgba(3,152,170,0.12), 0 0 50px rgba(3,152,170,0.04); transform: translateY(-4px); }
@@ -251,13 +210,11 @@
   .project-result { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--teal); padding: 10px 14px; background: var(--teal-dim); border-radius: 8px; border: 1px solid rgba(3,152,170,0.18); }
   .project-result::before { content: '→'; }
 
-  /* SKILLS */
   #skills { background: rgba(10,21,48,0.75); }
   .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
   .skill-group { margin-bottom: 32px; }
   .skill-group-label { font-family: var(--font-mono); font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; }
 
-  /* LEVEL TAGS */
   .level-list { display: flex; flex-direction: column; gap: 8px; }
   .level-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border2); border-radius: var(--r); transition: all 0.2s; }
   .level-item:hover { border-color: var(--border); }
@@ -268,21 +225,23 @@
   .level-tag.solid { background: rgba(3,152,170,0.08); color: var(--teal2); border: 1px solid rgba(3,152,170,0.15); }
   .level-tag.building { background: rgba(255,255,255,0.05); color: var(--text3); border: 1px solid var(--border2); }
 
-  /* MARQUEE */
   .marquee-section { margin-top: 60px; }
-  .marquee-wrapper { overflow: hidden; position: relative; width: 100%; }
+  .marquee-wrapper { overflow: hidden; position: relative; width: 100%; margin-bottom: 10px; }
   .marquee-wrapper::before, .marquee-wrapper::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
   .marquee-wrapper::before { left: 0; background: linear-gradient(90deg, var(--bg2) 0%, transparent 100%); }
   .marquee-wrapper::after { right: 0; background: linear-gradient(270deg, var(--bg2) 0%, transparent 100%); }
-  .marquee-track { display: flex; gap: 12px; width: max-content; animation: marqueeScroll 35s linear infinite; }
+  .marquee-track { display: flex; gap: 12px; width: max-content; }
+  .marquee-track.left  { animation: marqueeLeft  46.75s linear infinite; }
+  .marquee-track.right { animation: marqueeRight 38.25s linear infinite; }
   .marquee-track:hover { animation-play-state: paused; }
-  @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes marqueeLeft  { 0% { transform: translateX(0); }    100% { transform: translateX(-50%); } }
+  @keyframes marqueeRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
   .marquee-item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--border2); border-radius: var(--r); min-width: 80px; transition: border-color 0.2s; cursor: default; }
   .marquee-item:hover { border-color: var(--border); }
   .marquee-item span { font-size: 11px; color: var(--text2); font-family: var(--font-mono); white-space: nowrap; }
-  .tool-logo { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #ffffff; font-family: var(--font-display); letter-spacing: -0.5px; }
+  .tool-logo { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .tool-logo img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); }
 
-  /* JOURNEY */
   .journey-section { background: rgba(12,25,56,0.60); }
   .journey-quote { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: var(--r); padding: 28px 32px; margin-bottom: 40px; border-top-left-radius: 0; border-bottom-left-radius: 0; }
   .journey-quote p { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--text); line-height: 1.6; font-style: italic; }
@@ -291,7 +250,6 @@
   .journey-body p { color: var(--text2); line-height: 1.8; font-size: 15px; margin-bottom: 16px; }
   .journey-body strong { color: var(--teal); font-weight: 500; }
 
-  /* CONTACT */
   #contact { background: rgba(10,21,48,0.75); }
   .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
   .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r2); padding: 32px; }
@@ -302,14 +260,12 @@
   .contact-label { font-size: 14px; color: var(--text); transition: color 0.2s; }
   .contact-value { font-family: var(--font-mono); font-size: 12px; color: var(--text3); margin-top: 2px; }
 
-  /* FOOTER */
   footer { padding: 32px 80px; border-top: 1px solid var(--border2); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
   .footer-copy { font-family: var(--font-mono); font-size: 12px; color: var(--text3); }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a { font-family: var(--font-mono); font-size: 12px; color: var(--text3); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--teal); }
 
-  /* ANIMATIONS */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -317,7 +273,6 @@
   .available-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(3,152,170,0.4); } 50% { opacity: 0.8; transform: scale(0.9); box-shadow: 0 0 0 4px rgba(3,152,170,0); } }
 
-  /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
@@ -331,7 +286,6 @@
     .marquee-wrapper::before, .marquee-wrapper::after { width: 40px; }
   }
 
-  /* CURSOR + LOGO */
   .cursor-glow { width: 300px; height: 300px; background: radial-gradient(circle, rgba(3,152,170,0.05) 0%, transparent 70%); position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; transition: left 0.08s, top 0.08s; transform: translate(-50%, -50%); }
   .logo-wrapper { position: relative; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; margin-right: 10px; animation: floatBall 3s ease-in-out infinite; }
   @keyframes floatBall { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-4px); } }
@@ -381,44 +335,12 @@
   </div>
 </section>
 
-
-
-  
-<!--
 <section id="about">
   <div class="section-label">01 — About</div>
   <h2 class="section-title">Not just another<br>freelancer.</h2>
-  <div class="about-grid">
 
-    
-    <div class="about-text reveal">
-      <p>I'm <strong>Joven Labarejos</strong> — an AI Automation Specialist and n8n Workflow Engineer based in Quezon City, Philippines. I have a Bachelor of Science in Computer Science, which means I don't just use automation tools — I understand the logic behind them.</p>
-      <p>My background spans <strong>digital marketing, graphic design, document systems, and AI-powered content creation</strong>. That's not a scattered history — it's a complete picture of how businesses actually operate. And that's what makes my automations work in the real world, not just in theory.</p>
-      <p>I've been building toward this for <strong>8 years</strong> — through study, corporate setbacks, budget constraints, and pivots. Every obstacle made me a sharper problem-solver. Passion kept me moving. Systems keep me delivering.</p>
-      <p>I don't just build workflows. <strong>I build infrastructure that makes businesses run better.</strong></p>
-    </div>
-    <div class="reveal">
-      <div class="about-card">
-        <div class="about-card-label">// Career timeline</div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2025</div><div class="timeline-content"><div class="timeline-title">AI Automation Specialist</div><div class="timeline-sub">n8n, AI Agents, Prompt Engineering</div></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2024</div><div class="timeline-content"><div class="timeline-title">Document Control & Systems Specialist</div><div class="timeline-sub">ISO 9001:2015, Workflow Design</div></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2023</div><div class="timeline-content"><div class="timeline-title">OBM & Digital Marketing Consultant</div><div class="timeline-sub">Meta Ads, AI Content, Client Systems</div></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2022</div><div class="timeline-content"><div class="timeline-title">BS Computer Science — Graduate</div><div class="timeline-sub">NORSU Guihulngan City</div></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2020</div><div class="timeline-content"><div class="timeline-title">Graphic Designer — Printerest</div><div class="timeline-sub">+30% sales, 96% satisfaction rate</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
--->
-      <section id="about">
-  <div class="section-label">01 — About</div>
-  <h2 class="section-title">Not just another<br>freelancer.</h2>
-
-  <!-- TOP ROW: Text left, Photo right -->
-   <!-- ABOUT SECTION -->
 <div style="display:grid; grid-template-columns:1fr 240px; gap:48px; align-items:start; margin-bottom:48px;">
 
-  <!-- ABOUT SECTION -->
 <div class="about-editorial">
   <div class="about-content">
      <p>I'm <strong>Joven Labarejos Jr.</strong>
@@ -445,16 +367,8 @@
   </div>
 </div>
 
-  
 </div>
 
-
-
-    
-
- 
-
-  <!-- BOTTOM ROW: Career Timeline centered -->
   <div class="reveal" style="max-width:600px; margin:0 auto;">
     <div class="about-card">
       <div class="about-card-label" style="text-align:center;">// Career timeline</div>
@@ -467,18 +381,6 @@
   </div>
 
 </section>
-
-
-
-
-
-
-
-  
-
-
-
-  
 
 <section id="services">
   <div class="section-label">02 — Services</div>
@@ -494,11 +396,6 @@
   </div>
 </section>
 
-
-
-
-
-  
 <section id="portfolio">
   <div class="section-label">03 — Portfolio</div>
   <h2 class="section-title">Built. Deployed.<br>Results delivered.</h2>
@@ -523,7 +420,6 @@
   </div>
 </section>
 
-<!-- SKILLS — UPDATED with Level Tags + Marquee -->
 <section id="skills">
   <div class="section-label">04 — Skills</div>
   <h2 class="section-title">Technical depth.<br>Real world tested.</h2>
@@ -557,43 +453,14 @@
     </div>
   </div>
 
-  <!-- MARQUEE TICKER -->
+  <!-- MARQUEE TICKER — two rows, alternate directions -->
   <div class="marquee-section reveal">
     <div class="skill-group-label" style="margin-bottom:20px;">// Tools & Platforms</div>
     <div class="marquee-wrapper">
-      <div class="marquee-track">
-        <div class="marquee-item"><div class="tool-logo" style="background:#FF6B35;">n8n</div><span>n8n</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#10A37F;">GP</div><span>ChatGPT</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#1565C0;">MJ</div><span>Midjourney</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#0F9D58;">GS</div><span>Google Sheets</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#EA4335;">GM</div><span>Gmail API</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#F97316;">AT</div><span>Airtable</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#191919;">NT</div><span>Notion</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#00C4CC;">CV</div><span>Canva</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#21759B;">WP</div><span>WordPress</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#31A8FF;">PS</div><span>Photoshop</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#FF9A00;">AI</div><span>Illustrator</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#0078D4;">SP</div><span>SharePoint</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#1877F2;">FB</div><span>Meta Ads</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#7B68EE;">CD</div><span>CorelDraw</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#E34F26;">HD</div><span>HTML/CSS</span></div>
-        <!-- Duplicate for infinite loop -->
-        <div class="marquee-item"><div class="tool-logo" style="background:#FF6B35;">n8n</div><span>n8n</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#10A37F;">GP</div><span>ChatGPT</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#1565C0;">MJ</div><span>Midjourney</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#0F9D58;">GS</div><span>Google Sheets</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#EA4335;">GM</div><span>Gmail API</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#F97316;">AT</div><span>Airtable</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#191919;">NT</div><span>Notion</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#00C4CC;">CV</div><span>Canva</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#21759B;">WP</div><span>WordPress</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#31A8FF;">PS</div><span>Photoshop</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#FF9A00;">AI</div><span>Illustrator</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#0078D4;">SP</div><span>SharePoint</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#1877F2;">FB</div><span>Meta Ads</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#7B68EE;">CD</div><span>CorelDraw</span></div>
-        <div class="marquee-item"><div class="tool-logo" style="background:#E34F26;">HD</div><span>HTML/CSS</span></div>
-      </div>
+      <div class="marquee-track left" id="marqueeRow1"></div>
+    </div>
+    <div class="marquee-wrapper">
+      <div class="marquee-track right" id="marqueeRow2"></div>
     </div>
   </div>
 </section>
@@ -619,74 +486,52 @@
   </div>
 </section>
 
-
-
-
-
-
-  
 <section id="contact">
   <div class="section-label">06 — Contact</div>
   <h2 class="section-title">Let's build<br>something.</h2>
   <p class="section-sub">Ready to automate your business? Let's talk about what's slowing you down.</p>
 
+  <div class="contact-inner">
+  <div class="contact-form-side reveal">
+  <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r2); padding: 28px; text-align: center;">
+       <div class="contact-inner">  
+      <div class="contact-form-side reveal">   
+      <div class="about-card-label">// GET IN TOUCH</div>
+      <div class="contact-grid">
+        <a href="mailto:jovenlabarejosjr@gmail.com" class="contact-box">
+          <div class="contact-icon">📧</div>
+          <div class="contact-info">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">jovenlabarejosjr@gmail.com</div>
+          </div>
+        </a>
+        <a href="tel:+639055128215" class="contact-box">
+          <div class="contact-icon">📱</div>
+          <div class="contact-info">
+            <div class="contact-label">Phone / WhatsApp</div>
+            <div class="contact-value">+63 905 512 8215</div>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/labarejosjr" target="_blank" class="contact-box">
+          <div class="contact-icon">💼</div>
+          <div class="contact-info">
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">linkedin.com/in/labarejosjr</div>
+          </div>
+        </a>
+        </div>
+      <p> </p>
+      </div>
+        </div>
+           </div>
+           
+  </div>
+  </div>
 
-
-
-
-                <div class="contact-inner">
-                <div class="contact-form-side reveal">
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r2); padding: 28px; text-align: center;">
-                     <div class="contact-inner">  
-                    <div class="contact-form-side reveal">   
-                    <div class="about-card-label">// GET IN TOUCH</div>
-                    <div class="contact-grid">
-                      <a href="mailto:jovenlabarejosjr@gmail.com" class="contact-box">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-info">
-                          <div class="contact-label">Email</div>
-                          <div class="contact-value">jovenlabarejosjr@gmail.com</div>
-                        </div>
-                      </a>
-                  
-                      <a href="tel:+639055128215" class="contact-box">
-                        <div class="contact-icon">📱</div>
-                  
-                        <div class="contact-info">
-                          <div class="contact-label">Phone / WhatsApp</div>
-                          <div class="contact-value">+63 905 512 8215</div>
-                        </div>
-                      </a>
-                  
-                      <a href="https://linkedin.com/in/labarejosjr" target="_blank" class="contact-box">
-                        <div class="contact-icon">💼</div>
-                  
-                        <div class="contact-info">
-                          <div class="contact-label">LinkedIn</div>
-                          <div class="contact-value">linkedin.com/in/labarejosjr</div>
-                        </div>
-                      </a>
-                      </div>
-                
-                  <p> </p>
-                      
-                    </div>
-                      </div>
-                         </div>
-                         
-                            
-             </div>
-            </div>
-            </div>
-  
-
-
-<!-- ACTION SECTION -->
- <div class="contact-inner">
+  <div class="contact-inner">
     <div class="contact-form-side reveal">
       <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r2); padding: 28px; text-align: center;">
-        
-         <p style="font-size: 14px; color: var(--text2); margin-bottom: 8px; font-family: var(--font-mono);">// Schedule a free discovery call</p>
+        <p style="font-size: 14px; color: var(--text2); margin-bottom: 8px; font-family: var(--font-mono);">// Schedule a free discovery call</p>
         <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px;">Book a 30-min Call</h3>
         <p style="font-size: 14px; color: var(--text2); margin-bottom: 24px; line-height: 1.6;">Let's talk about what's slowing your business down — and how automation can fix it.</p>
         <div style="border-radius: var(--r2); overflow: hidden;">
@@ -697,7 +542,7 @@
     </div>
   </div>
 </section>
-  
+
 </main>
 
 <footer>
@@ -732,6 +577,58 @@
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
     navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--teal)' : ''; });
   });
+
+  // Build marquee with real SVG logos — two rows, alternate directions
+  const row1Tools = [
+    { name: 'n8n',           slug: 'n8n',                    bg: '#FF6B35' },
+    { name: 'ChatGPT',       slug: 'openai',                 bg: '#10A37F' },
+    { name: 'Google Sheets', slug: 'googlesheets',           bg: '#0F9D58' },
+    { name: 'Gmail',         slug: 'gmail',                  bg: '#EA4335' },
+    { name: 'Notion',        slug: 'notion',                 bg: '#191919' },
+    { name: 'Airtable',      slug: 'airtable',               bg: '#F97316' },
+    { name: 'Meta Ads',      slug: 'meta',                   bg: '#1877F2' },
+    { name: 'WordPress',     slug: 'wordpress',              bg: '#21759B' },
+  ];
+
+  const row2Tools = [
+    { name: 'Canva',         slug: 'canva',                  bg: '#00C4CC' },
+    { name: 'Photoshop',     slug: 'adobephotoshop',         bg: '#31A8FF' },
+    { name: 'Illustrator',   slug: 'adobeillustrator',       bg: '#FF9A00' },
+    { name: 'SharePoint',    slug: 'microsoftsharepoint',    bg: '#0078D4' },
+    { name: 'HTML/CSS',      slug: 'html5',                  bg: '#E34F26' },
+    { name: 'Midjourney',    slug: 'midjourney',             bg: '#1565C0' },
+    { name: 'CorelDraw',     slug: 'coreldraw',              bg: '#7B68EE' },
+    { name: 'Google Drive',  slug: 'googledrive',            bg: '#4285F4' },
+  ];
+
+
+
+  
+  
+  
+  <a class="browse-btn" href="https://n8n.io/integrations/">Browse all integrations <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+
+
+    
+
+
+
+    
+  function buildMarquee(arr) {
+    return arr.map(t => `
+      <div class="marquee-item">
+        <div class="tool-logo" style="background:${t.bg};">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${t.slug}.svg" alt="${t.name}" />
+        </div>
+        <span>${t.name}</span>
+      </div>
+    `).join('');
+  }
+
+  const r1 = document.getElementById('marqueeRow1');
+  const r2 = document.getElementById('marqueeRow2');
+  r1.innerHTML = buildMarquee(row1Tools) + buildMarquee(row1Tools);
+  r2.innerHTML = buildMarquee(row2Tools) + buildMarquee(row2Tools);
 </script>
 </body>
 </html>
