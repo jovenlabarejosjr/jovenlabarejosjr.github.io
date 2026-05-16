@@ -580,26 +580,34 @@
 
   // Build marquee with real SVG logos — two rows, alternate directions
   const row1Tools = [
-    { name: 'n8n',           slug: 'n8n',                    bg: '#FF6B35' },
-    { name: 'ChatGPT',       slug: 'openai',                 bg: '#10A37F' },
-    { name: 'Google Sheets', slug: 'googlesheets',           bg: '#0F9D58' },
-    { name: 'Gmail',         slug: 'gmail',                  bg: '#EA4335' },
-    { name: 'Notion',        slug: 'notion',                 bg: '#191919' },
-    { name: 'Airtable',      slug: 'airtable',               bg: '#F97316' },
-    { name: 'Meta Ads',      slug: 'meta',                   bg: '#1877F2' },
-    { name: 'WordPress',     slug: 'wordpress',              bg: '#21759B' },
-  ];
+  { name: 'Slack', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/slack.svg', bg: '#4A154B' },
+  { name: 'Google Sheets', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlesheets.svg', bg: '#0F9D58' },
+  { name: 'Notion', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/notion.svg', bg: '#000000' },
+  { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg', bg: '#24292E' },
+  { name: 'Telegram', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg', bg: '#2CA5E0' },
+  { name: 'Gmail', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg', bg: '#EA4335' },
+  { name: 'Airtable', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/airtable.svg', bg: '#FCB400' },
+  { name: 'Discord', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg', bg: '#5865F2' },
+  { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mysql.svg', bg: '#00758F' },
+  { name: 'HubSpot', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hubspot.svg', bg: '#FF7A59' },
+  { name: 'Salesforce', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/salesforce.svg', bg: '#00A1E0' },
+  { name: 'Stripe', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/stripe.svg', bg: '#635BFF' },
+];
 
-  const row2Tools = [
-    { name: 'Canva',         slug: 'canva',                  bg: '#00C4CC' },
-    { name: 'Photoshop',     slug: 'adobephotoshop',         bg: '#31A8FF' },
-    { name: 'Illustrator',   slug: 'adobeillustrator',       bg: '#FF9A00' },
-    { name: 'SharePoint',    slug: 'microsoftsharepoint',    bg: '#0078D4' },
-    { name: 'HTML/CSS',      slug: 'html5',                  bg: '#E34F26' },
-    { name: 'Midjourney',    slug: 'midjourney',             bg: '#1565C0' },
-    { name: 'CorelDraw',     slug: 'coreldraw',              bg: '#7B68EE' },
-    { name: 'Google Drive',  slug: 'googledrive',            bg: '#4285F4' },
-  ];
+const row2Tools = [
+  { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg', bg: '#10A37F' },
+  { name: 'Jira', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jira.svg', bg: '#0052CC' },
+  { name: 'Google Drive', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googledrive.svg', bg: '#4285F4' },
+  { name: 'WhatsApp', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg', bg: '#25D366' },
+  { name: 'Twilio', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/twilio.svg', bg: '#F22F46' },
+  { name: 'Asana', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/asana.svg', bg: '#F06A6A' },
+  { name: 'Zendesk', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zendesk.svg', bg: '#03363D' },
+  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mongodb.svg', bg: '#47A248' },
+  { name: 'Dropbox', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/dropbox.svg', bg: '#0061FF' },
+  { name: 'Linear', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linear.svg', bg: '#5E6AD2' },
+  { name: 'Postgres', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg', bg: '#336791' },
+  { name: 'Anthropic', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg', bg: '#C75B39' },
+];
 
   function buildMarquee(arr) {
     return arr.map(t => `
